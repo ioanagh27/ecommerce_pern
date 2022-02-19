@@ -1,5 +1,4 @@
 const express = require('express');
-const { user } = require('pg/lib/defaults');
 const router = express.Router();
 const UserService = require('../services/UserService');
 
