@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node setupDatabase.js && node index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -25,5 +25,8 @@
     "stripe": "^8.203.0",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

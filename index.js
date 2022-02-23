@@ -1,16 +1,22 @@
 const express = require('express');
 const app = express();
-const {PORT} = require('./config');
-const productRoute = require('./routes/product');
+
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname + '/.env') })
+
+const loaders = require('./loaders');
+const config = require('./config');
+//console.log(config, __dirname);
 
 const port = process.env.PORT || 3000;
 
-app.use('/api/products', productRoute);
+async function startServer() {
+    loaders(app);
+    console.log(loaders);
 
-app.get('/', (req, res) => {
-    res.send('Hello')
-})
+    app.listen(port, () => {
+        console.log(`App listening on port ${port}`)
+    }) 
+}
 
-app.listen(port, ()=> {
-    console.log(`App listening on port ${port}`)
-})
+startServer(); 
