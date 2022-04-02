@@ -22,7 +22,7 @@ paths:
       description: "Register a new user"
       produces:
         - "application/json"
-      parameters:
+      parameters: 
       responses:
         200:
           description: 200 Success

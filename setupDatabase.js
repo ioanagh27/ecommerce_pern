@@ -10,9 +10,7 @@ console.log(DB);
       email           VARCHAR(50),      
       password        TEXT,
       firstName       VARCHAR(50),
-      lastName        VARCHAR(50),
-      google          JSON,
-      facebook        JSON
+      lastName        VARCHAR(50)
     );
   `
 
