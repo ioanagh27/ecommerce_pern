@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const OrderService = require('../services/OrderService');
+const OrderService = require('../OrderService');
 const OrderServiceInstance = new OrderService();
 
 module.exports = (app) => {

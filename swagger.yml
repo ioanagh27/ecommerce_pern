@@ -11,8 +11,7 @@ info:
 schemes: 
   - http
 
-host: localhost:4000
-
+host: "https://ecommerce-appproject.herokuapp.com/"
 basePath: "/"
 
 paths:
