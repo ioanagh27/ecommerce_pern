@@ -82,6 +82,13 @@ module.exports = class CartService {
       Order.addItems(cartItems);
       await Order.create();
 
+      const charge = await stripe.charges.create({
+        amount: total,
+        currency: 'gbp',
+        source: paymentInfo.id,
+        description: 'Codecademy Charge'
+      });
+
       const order = Order.update({ status: 'COMPLETE' });
 
       return order;

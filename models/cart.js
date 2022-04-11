@@ -1,6 +1,6 @@
 const db = require('../db');
 const moment  = require('moment');
-const pgp = require('pg-promise') ({ capSQL: true});
+const pgp = require('pg-promise')({ capSQL: true});
 
 module.exports = class CartModel {
 
@@ -71,69 +71,4 @@ module.exports = class CartModel {
     }
   }
   
-  static async findOneById(id) {
-    try {
-
-      // Generate SQL statement
-      const statement = `SELECT *
-                         FROM carts
-                         WHERE id" = $1`;
-      const values = [id];
-  
-      // Execute SQL statment
-      const result = await db.query(statement, values);
-
-      if (result.rows?.length) {
-        return result.rows[0];
-      }
-
-      return null;
-
-    } catch(err) {
-      throw new Error(err);
-    }
-  }
-  static async findOneById(id) {
-    try {      
-
-      const statement = `SELECT *
-                         FROM carts
-                         WHERE id" = $1`;
-      const values = [id];      
-      const result = await db.query(statement, values);
-
-      if (result.rows?.length) {
-        return result.rows[0];
-      }
-
-      return null;
-
-    } catch(err) {
-      throw new Error(err);
-    }
-  }
-
-    static async findOneById(id) {
-        try {
-        
-        const statement = `SELECT *
-                            FROM carts
-                            WHERE id" = $1`;
-        const values = [id];        
-        const result = await db.query(statement, values);
-
-        if (result.rows?.length) {
-            return result.rows[0];
-        }
-
-        return null;
-
-        } catch(err) {
-        throw new Error(err);
-        }
-    }
-
 }
-
-
-    

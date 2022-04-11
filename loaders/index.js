@@ -2,6 +2,7 @@ const expressLoader = require('./express');
 const passportLoader = require('./passport');
 const routeLoader = require('../routes');
 const swaggerLoader = require('./swagger');
+const swagger = require('./swagger');
 
 module.exports = async (app) => {
 
@@ -16,7 +17,7 @@ module.exports = async (app) => {
   app.use((err, req, res, next) => {
 
     const { message, status } = err;
-  
-    return res.status(status).send({ message });
+    
+    return res.status(status >= 100 && status < 600 ? err.code : 500).send({ message });
   });
 }

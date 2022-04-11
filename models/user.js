@@ -1,4 +1,3 @@
-const { param } = require('express/lib/request');
 const db = require('../db');
 const pgp = require('pg-promise')({capSQL: true});
 
@@ -45,7 +44,7 @@ module.exports = class UserModel {
             const result = await db.query(statement, values);
 
             if(result.rows?.length) {
-                return result.row[0]
+                return result.rows[0]
             }
             return null;
 
