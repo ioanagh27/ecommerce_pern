@@ -11,7 +11,7 @@ info:
 schemes: 
   - http
 
-host: "localhost:4000/api-docs"
+host: "localhost:4000"
 basePath: "/"
 
 paths:

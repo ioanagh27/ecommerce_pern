@@ -1,3 +1,4 @@
+const connect = require('passport/lib/framework/connect');
 const {Pool} = require('pg');
 const {DB} = require('../config');
 
@@ -8,6 +9,7 @@ const pool = new Pool({
     password: DB.PGPASSWORD,
     port: DB.PGPORT
 });
+
 
 module.exports = {
     query: (text, params) => pool.query(text, params)
